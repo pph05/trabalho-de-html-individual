@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frases Motivacionais</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #frase {
+            margin-top: 20px;
+            font-size: 18px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h1>Frases Motivacionais</h1>
+    <button onclick="exibirFrase()">Mostrar Frase</button>
+    <p id="frase"></p>
+
+    <script>
+        function exibirFrase() {
+            const frases = [
+                "O sucesso é a soma de pequenos esforços repetidos dia após dia.",
+                "Acredite em você mesmo e tudo será possível.",
+                "Se você quer algo que nunca teve, então você precisa fazer algo que nunca fez.",
+                "Quanto maior o obstáculo, maior é a glória em superá-lo.",
+                "A persistência é o caminho do êxito.",
+                "O importante não é vencer todos os dias, mas lutar sempre.",
+                "Nunca é tarde demais para ser aquilo que sempre se desejou ser.",
+                "Você é capaz de mais do que imagina.",
+                "A vida é como andar de bicicleta: para ter equilíbrio, é preciso se manter em movimento.",
+                "O sucesso é a melhor vingança contra aqueles que duvidaram de você."
+            ];
+
+            const indice = Math.floor(Math.random() * frases.length);
+            const fraseAleatoria = frases[indice];
+            document.getElementById("frase").textContent = fraseAleatoria;
+        }
+    </script>
+</body>
+</html>

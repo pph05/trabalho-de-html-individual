@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estourando Balão</title>
+<h1>clique na bomba para inflar o balão</h1>
+<style>
+    #balao {
+        width: 200px;
+        height: 200px;
+        background-image: url('balao.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        transition: height 0.5s ease-in-out;
+    }
+    #bomba {
+        width: 200px;
+        height: 200px;
+        background-image: url('bomba.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        margin-left: 39px;
+    }
+</style>
+</head>
+<body>
+<div id="bomba"></div>
+<div id="balao"></div>
+<script>
+    document.getElementById('bomba').addEventListener('click', function() {
+        var balao = document.getElementById('balao');
+        var altura = balao.clientHeight;
+        
+        if (altura < 400) { // Altura máxima do balão antes de estourar
+            altura += 100; // Incremento da altura
+            balao.style.height = altura + 'px'; // Atualiza a altura do balão
+        } else {
+            alert('Boom! O balão estourou!');
+            balao.style.height = '10px'; // Reinicia a altura do balão
+        }
+    });
+</script>
+</body>
+</html>

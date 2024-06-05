@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Derrubando Maçãs</title>
+<h1>Clique em uma maçã para derrubá-la</h1>
+<style>
+    #arvore {
+        width: 500px;
+        height: 600px;
+        background-image: url('arvore.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: relative;
+    }
+    .maca {
+        width: 200px;
+        height: 200px;
+        background-image: url('maca.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        cursor: pointer;
+        transition: top 2s ease-in-out;
+    }
+</style>
+</head>
+<body>
+<div id="arvore">
+    <div class="maca" style="top: 10px; left: 5px;"></div>
+    <div class="maca" style="top: 100px; left: 100px;"></div>
+    <div class="maca" style="top: 200px; left: 200px;"></div>
+</div>
+<script>
+    var macas = document.getElementsByClassName('maca');
+    for (var i = 0; i < macas.length; i++) {
+        macas[i].addEventListener('click', function() {
+            this.style.top = '600px';
+            this.style.pointerEvents = 'none';
+        });
+    }
+</script>
+</body>
+</html>

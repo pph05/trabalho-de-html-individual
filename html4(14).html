@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botão Dark Mode</title>
+    <style>
+        body {
+            transition: background-color 0.5s, color 0.5s;
+        }
+        .dark-mode {
+            background-color: black;
+            color: white;
+        }
+        .light-mode {
+            background-color: white;
+            color: black;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        p {
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <h1>Botão Dark Mode</h1>
+    <p id="modeText">Clique no botão para ativar o Dark Mode</p>
+    <button onclick="toggleMode()">Dark Mode</button>
+    <p id="textmode">apague a luz, está muito claro</p>
+
+    <script>
+        function toggleMode() {
+            const body = document.body;
+            if (body.classList.contains('light-mode')) {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+                document.querySelector('button').textContent = "Light Mode";
+                modeText.textContent = "Clique no botão para ativar o Light Mode";
+                textmode.textContent = "acende a luz, está muito escuro";
+            } else {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+                document.querySelector('button').textContent = "Dark Mode";
+                modeText.textContent = "Clique no botão para ativar o Dark Mode";
+                textmode.textContent = "apague a luz, está muito claro";
+            }
+        }
+    </script>
+</body>
+</html>
